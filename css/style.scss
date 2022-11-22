@@ -1,0 +1,242 @@
+@charset "UTF-8";
+$color-black: #000000;
+$color-gray: #898989;
+$color-pink: #e40065;
+$color-yellow: #FDF8EB;
+$color-white: #ffffff;
+
+@mixin inner {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin flex($sb: space-between) {
+  display: flex;
+  justify-content: $sb;
+}
+
+@mixin flex3 {
+  width: (377/1170*100);
+}
+
+
+
+/*BASE
+-----------------------------------------------*/
+
+body {
+  color: $color-black;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif, 'Times New Roman', 'YuGothic';
+  line-height: (34/20);
+  letter-spacing: 0.5;
+  background-color: $color-white;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/*BLOCK
+-------------------------------------------------*/
+
+.header {
+  padding: 70px 0 100px;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__flex {
+    @include flex();
+  }
+
+  &__nav {
+    width: 370px;
+  }
+
+  &__ul {
+    padding-left: 0;
+    margin: 0;
+    @include flex();
+  }
+
+  &__a {
+    font-size: 14px;
+    color: $color-black;
+    font-family: Helvetica;
+    font-weight: bold;
+  }
+}
+
+.footer {
+  padding: 100px 0 60px;
+  text-align: right;
+
+  &__inner {
+    @include inner();
+  }
+}
+
+.unit {
+  margin-bottom: 59px;
+
+  &__rubi {
+    font-size: 12px;
+    color: $color-gray;
+    font-family: 'YuGothic';
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 38px;
+    font-weight: normal;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 120px;
+      margin: 30px 0 60px;
+      border-top: $color-black solid 1px;
+    }
+  }
+
+  &__ja {
+    font-size: 14px;
+    font-family: 'YuGothic';
+    margin-bottom: 40px;
+  }
+
+  &__en {
+    font-size: 14px;
+    font-family: 'Times New Roman';
+    font-style: italic;
+  }
+}
+
+.card {
+  &__title {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 30px 0 15px;
+  }
+
+  &__category {
+    font-size: 12px;
+    color: $color-gray;
+  }
+}
+
+.art {
+
+
+  &__title {
+    background-color: $color-pink;
+    color: $color-white;
+    display: inline;
+    padding: 5px 13px 6px 11px;
+    border-radius: 11.5px;
+    height: 23px;
+    font-size: 12px;
+    font-family: 'YuGothic';
+  }
+
+  &__text {
+    font-family: 'YuGothic';
+    font-size: 20px;
+    margin-top: 30px;
+  }
+}
+
+
+/* INDEX
+------------------------------------------------*/
+
+.mainvisual {
+  height: 500px;
+  background: url(../images/pic_visual.png) no-repeat center center/cover;
+  margin-bottom: 100px;
+}
+
+.works {
+  margin-bottom: 59px;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__list {
+    @include flex();
+  }
+
+  &__item {
+    @include flex3();
+  }
+}
+
+.project {
+  background-color: $color-yellow;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__list {
+    @include flex();
+  }
+
+  &__item {
+    width: 47.9%;
+  }
+
+  img {
+    margin-bottom: 30px;
+  }
+}
+
+.ps {
+  padding: 103px 0 100px;
+  background-color: $color-black;
+  text-align: center;
+
+  &__title {
+    color: $color-white;
+    font-size: 32px;
+    font-family: 'YuGothic';
+    font-weight: normal;
+    margin-bottom: 27px;
+  }
+
+  &__list {
+    @include flex(center);
+    text-align: center;
+  }
+
+  &__search {
+    width: 300px;
+    height: 40px;
+    border: none;
+  }
+
+  &__submit {
+    width: 100px;
+    height: 40px;
+    color: $color-white;
+    background-color: $color-pink;
+    border: none;
+  }
+
+}
